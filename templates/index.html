@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <table id="sortable">
+        <thead>
+            <tr>
+                <th onclick="sortBy(0)">ID</th>
+                <th onclick="sortBy(1)">Name</th>
+                <th onclick="sortBy(2)">Course Code</th>
+                <th onclick="sortBy(3)">Workflow State</th>
+                <th onclick="sortBy(4)">Start Date</th>
+                <th onclick="sortBy(5)">End Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for items in data %}
+            <tr>
+                <td>{{ items['id'] }}</td>
+                <td>{{ items['name'] }}</td>
+                <td>{{ items['course_code'] }}</td>
+                <td>{{ items['workflow_state'] }}</td>
+                <td>{{ items['start_at'] }}</td>
+                <td>{{ items['end_at'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
